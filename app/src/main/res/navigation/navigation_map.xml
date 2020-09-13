@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_map"
+    app:startDestination="@id/login_fragment">
+
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="com.example.interview.Login_fragment"
+        android:label="fragment_login_fragment"
+        tools:layout="@layout/fragment_login_fragment" >
+        <action
+            android:id="@+id/action_login_fragment_to_registration"
+            app:destination="@id/registration" />
+        <action
+            android:id="@+id/action_login_fragment_to_home_fragment"
+            app:destination="@id/home_fragment"
+            app:launchSingleTop="false"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/registration"
+        android:name="com.example.interview.Registration_fragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registration_to_login_fragment"
+            app:destination="@id/login_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.example.interview.Home_fragment"
+        android:label="fragment_home_fragment"
+        tools:layout="@layout/fragment_home_fragment" />
+</navigation>
